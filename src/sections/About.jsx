@@ -27,6 +27,5 @@ function AboutSection() {
     </>
   );
 }
-1;
 
 export default AboutSection;

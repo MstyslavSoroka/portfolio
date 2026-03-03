@@ -1,11 +1,19 @@
-import AboutSection from './sections/About.jsx';
-import Header from './sections/Header.jsx';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Header from './sections/Header';
+import About from './sections/About';
+import Skills from './sections/Skills';
+import Projects from './sections/Projects';
 
 function App() {
   return (
     <>
       <Header />
-      <AboutSection />
+      <Routes>
+        <Route path="/" element={<Navigate to="/about-me" replace />} />
+        <Route path="/about-me" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
     </>
   );
 }
