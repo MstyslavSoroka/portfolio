@@ -6,7 +6,7 @@ import SvgSprite from './SvgSprite';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/portfolio">
+  <BrowserRouter>
     <>
       <SvgSprite />
       <App />
