@@ -16,7 +16,46 @@ function AboutSection() {
                 👋
               </span>
             </h1>
-            <p>Based in Aberdeen, Scotland</p>
+            <p>
+              I'm a 15 year old web developer from Aberdeen, Scotland. I
+              specialise in creating modern and responsible websites in react
+              Js.
+            </p>
+            <p>Languages Spoken: English, Ukrainian, Russian</p>
+            <ul className="flex gap-5">
+              <li>
+                <a
+                  href="https://github.com/MstyslavSoroka"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg className="w-10 h-10">
+                    <use href="#icon-github" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <svg className="w-10 h-10">
+                    <use href="#icon-email" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <svg className="w-10 h-10">
+                    <use href="#icon-linkedin" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <svg className="w-10 h-10">
+                    <use href="#icon-telegram" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
           </div>
           <Map
             initialViewState={{
