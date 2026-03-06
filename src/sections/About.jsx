@@ -1,10 +1,25 @@
-import { Map } from '@vis.gl/react-maplibre';
-import 'maplibre-gl/dist/maplibre-gl.css';
+import Map from '../components/Map';
+import ToolTip from '../components/Tooltip';
+import { useState } from 'react';
 
 function AboutSection() {
+  const [anchor, setAnchor] = useState(null);
+  const [content, setContent] = useState('');
+
+  const handleMouseOver = (e, tooltipContent) => {
+    setAnchor(e.currentTarget);
+    setContent(tooltipContent);
+  };
+
+  const handleMouseOut = () => {
+    setAnchor(null);
+    setContent('');
+  };
+
   return (
     <>
-      <section className="bg-zinc-800 text-zinc-200 flex items-center justify-center">
+      <ToolTip anchor={anchor} content={content} />
+      <section className="bg-zinc-800 text-zinc-200 py-10 px-4 flex items-center justify-center">
         <div className="flex flex-col-reverse md:flex-row container mx-auto items-center justify-center gap-10">
           <div className="py-20 px-4 lg:container mx-auto">
             <h1 className="text-4xl font-bold text-5xl ">
@@ -16,12 +31,28 @@ function AboutSection() {
                 👋
               </span>
             </h1>
-            <p>
-              I'm a 15 year old web developer from Aberdeen, Scotland. I
-              specialise in creating modern and responsible websites in react
+            <p className="py-4 text-lg">
+              I'm a 15 year old web developer from Aberdeen,
+              <span
+                onMouseOver={(e) => handleMouseOver(e, '🏴󠁧󠁢󠁳󠁣󠁴󠁿')}
+                onMouseOut={handleMouseOut}
+              >
+                {' '}
+                Scotland.{' '}
+              </span>
+              I specialise in creating modern and responsible websites in react
               Js.
             </p>
-            <p>Languages Spoken: English, Ukrainian, Russian</p>
+            <p>
+              Languages Spoken:{' '}
+              <span
+                onMouseOver={(e) => handleMouseOver(e, '🇬🇧')}
+                onMouseOut={handleMouseOut}
+              >
+                English
+              </span>
+              , Ukrainian, Russian
+            </p>
             <ul className="flex gap-5">
               <li>
                 <a
@@ -57,20 +88,7 @@ function AboutSection() {
               </li>
             </ul>
           </div>
-          <Map
-            initialViewState={{
-              longitude: -2.09,
-              latitude: 57.15,
-              zoom: 12,
-            }}
-            style={{
-              width: '600px',
-              height: '400px',
-              borderRadius: '8px',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-            }}
-            mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
-          />
+          <Map />
         </div>
       </section>
     </>
