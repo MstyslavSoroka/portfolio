@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import icon from '../assets/sprite.svg';
+import SideMenu from '../components/SideMenu';
 
 const navItems = [
   { label: 'About Me', path: '/about-me' },
@@ -11,6 +12,8 @@ const navItems = [
 function Header() {
   const [active, setActive] = useState(0);
   const [pillStyle, setPillStyle] = useState({ left: 0, width: 0 });
+
+  const [menuShown, setMenuShown] = useState(false);
 
   const containerRef = useRef(null);
   const buttonsRef = useRef([]);
@@ -34,7 +37,8 @@ function Header() {
   }, [active]);
 
   return (
-    <header className="flex bg-zinc-800 text-zinc-200 justify-center px-5">
+    <header className="flex bg-zinc-950 text-zinc-200 justify-center px-5">
+      <SideMenu shown={menuShown} />
       <nav className="flex items-center w-full py-4 lg:container justify-between">
         <div className="flex font-mono relative h-[64px] scale-100  flex items-center rounded-full p-2">
           <div className="absolute inset-0 rounded-full bg-linear-to-b from-neutral-700 to-neutral-800 shadow-[0_8px_32px_rgba(0,0,0,0.6)]" />
@@ -84,11 +88,14 @@ function Header() {
           </div>
         </div>
 
-        <div className="font-mono scale-100 relative h-[64px] flex items-center rounded-full p-2">
+        <div className="font-mono scale-100 relative h-[64px] flex items-center rounded-full p-2 ">
           <div className="absolute inset-0 rounded-full bg-linear-to-b from-neutral-700 to-neutral-800 shadow-[0_8px_32px_rgba(0,0,0,0.6)]" />
           <div className="absolute inset-0.75 rounded-full bg-linear-to-b from-neutral-800 to-neutral-900" />
           <div className="absolute inset-2 rounded-full bg-white/5 backdrop-blur-sm" />
-          <button className="relative z-10 p-2">
+          <button
+            className="relative z-10 p-2 cursor-pointer"
+            onClick={() => setMenuShown(true)}
+          >
             <svg className="h-5 w-5 fill-white ">
               <use href="#icon-menu" />
             </svg>

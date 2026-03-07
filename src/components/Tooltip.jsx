@@ -7,7 +7,6 @@ function ToolTip({ anchor, content }) {
   let yPos = 0;
 
   if (anchor !== null) {
-    console.log(anchor.getBoundingClientRect());
     xPos =
       anchor.getBoundingClientRect().x +
       anchor.getBoundingClientRect().width / 2 -

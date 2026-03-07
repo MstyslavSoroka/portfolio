@@ -1,4 +1,5 @@
 import Map from '../components/Map';
+import Header from './Header';
 import ToolTip from '../components/Tooltip';
 import { useState } from 'react';
 
@@ -19,7 +20,7 @@ function AboutSection() {
   return (
     <>
       <ToolTip anchor={anchor} content={content} />
-      <section className="bg-zinc-800 text-zinc-200 py-10 px-4 flex items-center justify-center">
+      <section className="bg-zinc-950 bg-[url(/gradient.png)] bg-no-repeat bg-center bg-size-[auto_100%] text-zinc-200 py-10 sm:py-50 px-4 flex items-center justify-center">
         <div className="flex flex-col-reverse md:flex-row container mx-auto items-center justify-center gap-10">
           <div className="flex flex-col px-4 lg:container mx-auto justify-center">
             <h1 className="text-4xl font-bold text-5xl ">
@@ -31,10 +32,10 @@ function AboutSection() {
                 👋
               </span>
             </h1>
-            <p className="py-4 text-lg">
+            <p className="py-4 text-lg max-w-125">
               I'm a 15 year old web developer from Aberdeen,
               <span
-                className="cursor-pointer"
+                className="cursor-pointer font-black"
                 onMouseOver={(e) => handleMouseOver(e, '🏴󠁧󠁢󠁳󠁣󠁴󠁿')}
                 onMouseOut={handleMouseOut}
               >
@@ -43,7 +44,7 @@ function AboutSection() {
               </span>
               I specialise in creating modern and responsible websites in
               <span
-                className="cursor-pointer"
+                className="cursor-pointer font-black"
                 onMouseOver={(e) =>
                   handleMouseOver(
                     e,
@@ -59,7 +60,7 @@ function AboutSection() {
               </span>
               and
               <span
-                className="cursor-pointer"
+                className="cursor-pointer font-black"
                 onMouseOver={(e) =>
                   handleMouseOver(
                     e,
@@ -107,7 +108,7 @@ function AboutSection() {
                   href="https://github.com/MstyslavSoroka"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex border-2 border-zinc-200 rounded-md p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
+                  className="group flex border-2 border-zinc-200 rounded-xl p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
                 >
                   <svg className="w-7 h-7">
                     <use
@@ -122,7 +123,7 @@ function AboutSection() {
                   href="mailto:mstyslavv@proton.me"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex border-2 border-zinc-200 rounded-md p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
+                  className="group flex border-2 border-zinc-200 rounded-xl p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
                 >
                   <svg className="w-7 h-7">
                     <use
@@ -137,7 +138,7 @@ function AboutSection() {
                   href="https://www.linkedin.com/in/mstyslav-soroka-173903298"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex border-2 border-zinc-200 rounded-md p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
+                  className="group flex border-2 border-zinc-200 rounded-xl p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
                 >
                   <svg className="w-7 h-7">
                     <use
@@ -152,7 +153,7 @@ function AboutSection() {
                   href="https://t.me/mstyslavv"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex border-2 border-zinc-200 rounded-md p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
+                  className="group flex border-2 border-zinc-200 rounded-xl p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
                 >
                   <svg className="w-7 h-7">
                     <use
