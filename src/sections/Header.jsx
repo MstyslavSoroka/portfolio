@@ -38,14 +38,15 @@ function Header() {
 
   return (
     <header className="flex bg-zinc-950 text-zinc-200 justify-center px-5">
-      <SideMenu shown={menuShown} />
+      <SideMenu shown={menuShown} setShown={setMenuShown} />
       <nav className="flex font-jetbrains items-center w-full py-4 lg:container justify-between">
         <div className="flex  bg-zinc-900/60  flex items-center rounded-full p-2 border-1 border-zinc-800">
-          <span className="relative z-10 px-6 py-3 rounded-full">
+          <span className="flex items-center relative z-10 px-6 py-3 rounded-full">
             <NavLink to="/" className="cursor-pointer">
               ~
             </NavLink>
             <span>{location.pathname}/</span>
+            <span className="ml-0.5 inline-block animate-[pulseDisappear_1.5s_ease-in-out_infinite] h-4 w-2 bg-zinc-200/70"></span>
           </span>
         </div>
 
@@ -81,12 +82,12 @@ function Header() {
           </div>
         </div>
 
-        <div className="group h-full aspect-square flex items-center justify-center rounded-full bg-zinc-900/60 border-1 border-zinc-800 cursor-pointer">
-          <button
-            className="p-2 cursor-pointer group-hover:rotate-90 transition-transform duration-300"
-            onClick={() => setMenuShown(true)}
-          >
-            <svg className="h-6 w-6 fill-zinc-500 group-hover:fill-zinc-200 transition-colors">
+        <div
+          className="group h-full aspect-square flex items-center justify-center rounded-full bg-zinc-900/60 border-1 border-zinc-800 hover:shadow-[0_0_15px_0_rgba(82,82,91,0.6)] transition-all duration-300 cursor-pointer"
+          onClick={() => setMenuShown(true)}
+        >
+          <button className="p-2 cursor-pointer group-hover:rotate-90 transition-transform duration-300">
+            <svg className="h-6 w-6 fill-zinc-200 transition-colors">
               <use href="#icon-menu" />
             </svg>
           </button>

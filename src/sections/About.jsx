@@ -168,6 +168,7 @@ function AboutSection() {
                 </a>
               </li>
             </ul>
+            <div></div>
           </div>
           <Map />
         </div>

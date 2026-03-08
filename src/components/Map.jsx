@@ -6,29 +6,37 @@ function MapComponent() {
   const mapRef = useRef(null);
 
   return (
-    <Map
-      ref={mapRef}
-      onLoad={() =>
-        mapRef.current?.flyTo({
-          center: [-2.09, 57.15],
+    <div className="w-full border-1 border-zinc-800 rounded-2xl overflow-hidden">
+      <Map
+        ref={mapRef}
+        onLoad={() =>
+          mapRef.current?.flyTo({
+            center: [-2.09, 57.15],
+            zoom: 12,
+            duration: 4000,
+          })
+        }
+        attributionControl={false}
+        initialViewState={{
+          longitude: 0,
+          latitude: 0,
           zoom: 12,
-          duration: 4000,
-        })
-      }
-      attributionControl={false}
-      initialViewState={{
-        longitude: 0,
-        latitude: 0,
-        zoom: 12,
-      }}
-      style={{
-        width: '100%',
-        height: '400px',
-        borderRadius: '8px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-      }}
-      mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
-    />
+        }}
+        style={{
+          borderRadius: '16px 16px 0 0',
+          width: '100%',
+          height: '400px',
+        }}
+        mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+      />
+      <div className="flex justify-between p-4 font-jetbrains text-zinc-200 bg-zinc-900 rounded-b-2xl">
+        <p>ABERDEEN,UK</p>
+        <div className="flex gap-5 ">
+          <p>LONGITUDE: -2.09</p>
+          <p>LATITUDE: 57.15</p>
+        </div>
+      </div>
+    </div>
   );
 }
 

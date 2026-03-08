@@ -8,6 +8,18 @@
     font-family: "Space Grotesk", monospace;
 }
 
+@keyframes pulseDisappear {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
 @theme wiggle {
     --animate-wiggle: wiggle 1s infinite;
 
