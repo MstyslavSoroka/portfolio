@@ -1,4 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import '@fontsource/jetbrains-mono';
+import '@fontsource/space-grotesk';
 import Header from './sections/Header';
 import About from './sections/About';
 import Skills from './sections/Skills';

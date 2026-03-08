@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+.font-jetbrains {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.font-grotesk {
+    font-family: "Space Grotesk", monospace;
+}
+
 @theme wiggle {
     --animate-wiggle: wiggle 1s infinite;
 
