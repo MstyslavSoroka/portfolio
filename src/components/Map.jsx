@@ -12,9 +12,10 @@ function MapComponent() {
         mapRef.current?.flyTo({
           center: [-2.09, 57.15],
           zoom: 12,
-          duration: 3000,
+          duration: 4000,
         })
       }
+      attributionControl={false}
       initialViewState={{
         longitude: 0,
         latitude: 0,

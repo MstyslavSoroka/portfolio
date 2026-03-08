@@ -5,10 +5,12 @@ import Header from './sections/Header';
 import About from './sections/About';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
+import Preloader from './components/Loader';
 
 function App() {
   return (
     <>
+      <Preloader />
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/about-me" replace />} />

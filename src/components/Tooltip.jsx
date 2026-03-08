@@ -14,7 +14,7 @@ function ToolTip({ anchor, content }) {
     yPos =
       anchor.getBoundingClientRect().y -
       anchor.getBoundingClientRect().height -
-      20;
+      15;
   }
 
   return (
