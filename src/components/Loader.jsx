@@ -39,7 +39,7 @@ function Loader() {
   if (finished) return null;
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-zinc-950 text-zinc-200 text-4xl">
+    <div className="absolute inset-0 z-100000 w-screen h-screen flex items-center justify-center bg-zinc-950 text-zinc-200 text-4xl overflow-hidden">
       <p>
         {languages[currentI]}{' '}
         <span className="animate-pulse [animation-duration:0.8s]">_</span>
