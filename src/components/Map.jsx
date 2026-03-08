@@ -29,9 +29,9 @@ function MapComponent() {
         }}
         mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
       />
-      <div className="flex justify-between p-4 font-jetbrains text-zinc-200 bg-zinc-900 rounded-b-2xl">
-        <p>ABERDEEN,UK</p>
-        <div className="flex gap-5 ">
+      <div className="flex flex-wrap justify-between p-4 gap-5 items-center font-jetbrains text-zinc-200 bg-zinc-900 rounded-b-2xl">
+        <p>ABERDEEN,SCOTLAND</p>
+        <div className="sm:flex gap-5 flex-wrap">
           <p>LONGITUDE: -2.09</p>
           <p>LATITUDE: 57.15</p>
         </div>
