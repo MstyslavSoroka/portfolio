@@ -23,7 +23,7 @@ function AboutSection() {
       <ToolTip anchor={anchor} content={content} />
       <section className="bg-zinc-950 font-grotesk bg-[url(/gradient.png)] bg-no-repeat bg-center bg-size-[auto_100%] text-zinc-400 py-10 sm:py-50 px-4 flex items-center justify-center">
         <div className="flex flex-col sm:flex-row container mx-auto items-center justify-center gap-10">
-          <div className="flex flex-col container sm:px-4 mx-auto justify-center">
+          <div className="flex flex-col container mx-auto justify-center">
             <p className="py-2 font-jetbrains">// welcome to my portfolio</p>
             <h1 className="text-4xl font-bold text-5xl text-zinc-200">
               Hey, I'm{' '}
@@ -112,7 +112,7 @@ function AboutSection() {
                   href="https://github.com/MstyslavSoroka"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex border-1 border-zinc-400 rounded-xl p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
+                  className="group flex border-2 border-zinc-400 rounded-xl p-1.5 hover:bg-zinc-200 hover:shadow-lg shadow-zinc-700 transition-all duration-200"
                 >
                   <svg className="w-7 h-7">
                     <use
