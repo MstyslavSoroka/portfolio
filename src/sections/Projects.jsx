@@ -42,7 +42,7 @@ function Projects() {
     <>
       <section className="flex items-center justify-center bg-zinc-950 font-grotesk">
         <div className="container py-30">
-          <h1 className="text-zinc-200 text-4xl font-black flex">
+          <h1 className="text-zinc-200 text-4xl gap-5 font-black flex">
             <svg className="h-10 w-10">
               <use href="#icon-github" className="fill-zinc-200"></use>
             </svg>{' '}
