@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className="bg-zinc-900 text-zinc-500 flex justify-center pt-10 pb-20 px-5">
+    <footer className="bg-zinc-900 text-zinc-500 flex justify-center py-10  md:pb-35 px-5 relative overflow-hidden">
       <div className="container flex gap-5 flex-wrap justify-between">
         <div>
           <h3 className="text-zinc-200 pb-5">
@@ -129,6 +129,9 @@ function Footer() {
           </div>
         </div>
       </div>
+      <h1 className="hidden md:flex md:-bottom-4 md:text-6xl  lg:-bottom-7 lg:text-8xl absolute xl:-bottom-10 overflow-hidden xl:text-9xl font-grotesk font-black">
+        MSTYSLAV SOROKA
+      </h1>
     </footer>
   );
 }
