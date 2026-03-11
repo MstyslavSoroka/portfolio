@@ -1,27 +1,29 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function ToolTip({ anchor, content }) {
   //   const elemRef = useRef();
+  const [pos, setPos] = useState({ x: -999, y: -999 });
 
-  let xPos = 0;
-  let yPos = 0;
-
-  if (anchor !== null) {
-    xPos =
-      anchor.getBoundingClientRect().x +
-      anchor.getBoundingClientRect().width / 2 -
-      15;
-    yPos =
-      anchor.getBoundingClientRect().y -
-      anchor.getBoundingClientRect().height -
-      15;
-  }
+  useEffect(() => {
+    if (!anchor) return;
+    setPos({
+      x:
+        anchor.getBoundingClientRect().x +
+        anchor.getBoundingClientRect().width / 2 -
+        15,
+      y:
+        anchor.getBoundingClientRect().top +
+        window.scrollY -
+        anchor.getBoundingClientRect().height -
+        15,
+    });
+  }, [anchor]);
 
   return (
     <>
       <div
         className="absolute"
-        style={{ left: xPos || -100, top: yPos || -100 }}
+        style={{ left: pos.x || -100, top: pos.y || -100 }}
       >
         <div
           className={`flex flex-col items-center transition-all duration-300 ${

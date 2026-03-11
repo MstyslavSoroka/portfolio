@@ -21,7 +21,7 @@ function AboutSection() {
   return (
     <>
       <ToolTip anchor={anchor} content={content} />
-      <section className="bg-zinc-950 font-grotesk bg-[url(/gradient.png)] bg-no-repeat bg-center bg-size-[auto_100%] text-zinc-400 py-10 sm:py-50 px-4 flex items-center justify-center">
+      <section className="bg-zinc-950 font-grotesk bg-[url(/gradient.png)] bg-no-repeat bg-center bg-size-[auto_100%] text-zinc-400 py-10 min-h-[calc(100vh-90px)]  px-4 flex items-center justify-center">
         <div className="flex flex-col sm:flex-row container mx-auto items-center justify-center gap-10">
           <div className="flex flex-col container mx-auto justify-center">
             <p className="py-2 font-jetbrains">// welcome to my portfolio</p>
@@ -168,9 +168,45 @@ function AboutSection() {
                 </a>
               </li>
             </ul>
-            <div></div>
+            <div className="flex">
+              <div className="bg-zinc-800/40 px-7 py-5 border border-zinc-800 rounded-2xl ">
+                <ul className="flex gap-7 flex-wrap">
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full inline-block bg-green-500 animate-[pulseDisappear_2s_ease-in-out_infinite] mr-1"></span>
+                    <div>
+                      <h4 className="uppercase font-jetbrains text-sm">
+                        status
+                      </h4>
+                      <p className="text-md text-zinc-200">Open to work</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full inline-block bg-zinc-500  mr-1"></span>
+                    <div>
+                      <h4 className="uppercase font-jetbrains text-sm">
+                        work experience
+                      </h4>
+                      <p className="text-md text-zinc-200">0 years</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full inline-block bg-zinc-500  mr-1"></span>
+                    <div>
+                      <h4 className="uppercase font-jetbrains text-sm">
+                        coding experience
+                      </h4>
+                      <p className="text-md text-zinc-200">2.5 years</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <Map />
+        </div>
+        <div className="hidden absolute bottom-5 md:bottom-10 lg:flex flex-col items-center gap-2">
+          <p className="font-jetbrains tracking-widest">SCROLL</p>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-zinc-200 via-zinc-500 to-zinc-900"></div>
         </div>
       </section>
     </>

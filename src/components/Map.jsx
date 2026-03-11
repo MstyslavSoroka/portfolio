@@ -30,7 +30,13 @@ function MapComponent() {
         mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
       />
       <div className="flex flex-wrap justify-between p-4 gap-5 items-center font-jetbrains text-zinc-200 bg-zinc-900 rounded-b-2xl">
-        <p>ABERDEEN,SCOTLAND</p>
+        <div className="flex items-center gap-2">
+          <svg className="w-5 h-5">
+            <use href="#icon-location" className="fill-zinc-200"></use>
+          </svg>
+          <p>ABERDEEN,SCOTLAND</p>
+        </div>
+
         <div className="sm:flex gap-5 flex-wrap">
           <p>LONGITUDE: -2.09</p>
           <p>LATITUDE: 57.15</p>
