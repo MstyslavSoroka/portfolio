@@ -9,7 +9,9 @@ function Projects() {
 
       if (cached) {
         setFilterRepo(JSON.parse(cached));
+        console.log(`using cached stuff`);
         console.log(JSON.parse(cached));
+
         return;
       }
 
