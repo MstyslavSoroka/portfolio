@@ -59,8 +59,11 @@ function Projects() {
           </h1>
           <div>
             {filterRepo.map((item) => (
-              <div key={item.id} className="text-zinc-500">
-                <div>
+              <div
+                key={item.id}
+                className="text-zinc-500 border border-zinc-800 rounded-2xl"
+              >
+                <div className="bg-zinc-800/50">
                   <div>
                     <div>
                       <ul>
@@ -68,7 +71,16 @@ function Projects() {
                         <li>o</li>
                         <li>o</li>
                       </ul>
-                      <p>{item.stargazers_count}</p>
+
+                      <p>
+                        <svg className="w-4 h-4">
+                          <use
+                            href="#icon-star"
+                            className="fill-amber-300"
+                          ></use>
+                        </svg>{' '}
+                        {item.stargazers_count}
+                      </p>
                     </div>
                   </div>
                   <div>
@@ -95,6 +107,19 @@ function Projects() {
                     {item.name} <span>{item.created_at.slice(0, 10)}</span>
                   </h3>
                   <p>{item.description}</p>
+                  <div>
+                    <svg className="w-4 h-4">
+                      <use href="#icon-tag" className="fill-zinc-200"></use>
+                    </svg>
+
+                    <ul>
+                      {item.topics
+                        .filter((topic) => topic !== 'portfolio-showcase')
+                        .map((topic) => (
+                          <li key={topic}>{topic}</li>
+                        ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}
