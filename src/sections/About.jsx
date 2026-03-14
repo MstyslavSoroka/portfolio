@@ -206,7 +206,7 @@ function AboutSection() {
         </div>
         <div className="hidden absolute bottom-5 md:bottom-10 lg:flex flex-col items-center gap-2">
           <p className="font-jetbrains tracking-widest">SCROLL</p>
-          <div className="w-[1px] h-8 bg-gradient-to-b from-zinc-200 via-zinc-500 to-zinc-900"></div>
+          <div className="w-[1.5px] h-8 bg-linear-to-b from-zinc-200 via-zinc-500 to-zinc-900"></div>
         </div>
       </section>
     </>

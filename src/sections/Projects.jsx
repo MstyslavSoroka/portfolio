@@ -49,7 +49,7 @@ function Projects() {
   }, []);
   return (
     <>
-      <section className="flex items-center justify-center bg-zinc-950 font-grotesk">
+      <section className="flex items-center justify-center bg-zinc-950 font-grotesk px-5">
         <div className="container py-30">
           <h1 className="text-zinc-200 text-4xl gap-5 font-black flex">
             <svg className="h-10 w-10">
@@ -57,22 +57,43 @@ function Projects() {
             </svg>{' '}
             My Projects
           </h1>
-          <div>
+          <div className="py-10 flex gap-10 w-full  flex-wrap">
             {filterRepo.map((item) => (
               <div
                 key={item.id}
-                className="text-zinc-500 border border-zinc-800 rounded-2xl"
+                className="text-zinc-500 border border-zinc-800 rounded-2xl w-full md:w-[calc(50%-40px)] lg:w-[calc(33%-40px)] hover:border-zinc-200/50 transition-all"
               >
-                <div className="bg-zinc-800/50">
+                <div className="bg-zinc-800/50 p-5 rounded-t-2xl">
                   <div>
-                    <div>
-                      <ul>
-                        <li>o</li>
-                        <li>o</li>
-                        <li>o</li>
+                    <div className="flex justify-between">
+                      <ul className="flex items-center gap-2">
+                        <li className="bg-[#FF5F57] rounded-full group">
+                          <svg className="opacity-0 w-4 h-4 group-hover:opacity-100 transition-opacity">
+                            <use
+                              href="#icon-close"
+                              className="fill-black"
+                            ></use>
+                          </svg>
+                        </li>
+                        <li className="bg-[#FEBC2E] rounded-full group">
+                          <svg className="opacity-0 w-4 h-4 group-hover:opacity-100 transition-opacity">
+                            <use
+                              href="#icon-minimize"
+                              className="fill-black"
+                            ></use>
+                          </svg>
+                        </li>
+                        <li className="bg-[#28C840] rounded-full group p-1">
+                          <svg className="opacity-0 w-2 h-2 group-hover:opacity-100 transition-opacity">
+                            <use
+                              href="#icon-maximize"
+                              className="fill-black"
+                            ></use>
+                          </svg>
+                        </li>
                       </ul>
 
-                      <p>
+                      <p className="flex items-center gap-2">
                         <svg className="w-4 h-4">
                           <use
                             href="#icon-star"
@@ -84,11 +105,11 @@ function Projects() {
                     </div>
                   </div>
                   <div>
-                    <h2>
+                    <h2 className="py-2 text-xl text-zinc-200">
                       {item.owner.login} / {item.name}
                     </h2>
                     <p>Link to</p>
-                    <ul>
+                    <ul className="flex gap-4">
                       <li>
                         <a href={item.homepage} target="_blank">
                           Preview
@@ -102,21 +123,27 @@ function Projects() {
                     </ul>
                   </div>
                 </div>
-                <div>
-                  <h3>
+                <div className="p-5">
+                  <h3 className="flex justify-between pb-2">
                     {item.name} <span>{item.created_at.slice(0, 10)}</span>
                   </h3>
-                  <p>{item.description}</p>
+                  <p className="pb-5">{item.description}</p>
                   <div>
-                    <svg className="w-4 h-4">
-                      <use href="#icon-tag" className="fill-zinc-200"></use>
-                    </svg>
-
-                    <ul>
+                    <ul className="flex gap-2 flex-wrap items-center">
+                      <li>
+                        <svg className="w-4 h-4">
+                          <use href="#icon-tag" className="fill-zinc-200"></use>
+                        </svg>
+                      </li>
                       {item.topics
                         .filter((topic) => topic !== 'portfolio-showcase')
                         .map((topic) => (
-                          <li key={topic}>{topic}</li>
+                          <li
+                            className="border border-zinc-800 px-3 rounded-2xl hover:border-zinc-200/80 transition-colors cursor-pointer"
+                            key={topic}
+                          >
+                            {topic}
+                          </li>
                         ))}
                     </ul>
                   </div>
