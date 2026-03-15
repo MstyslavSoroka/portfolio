@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
+import Cursor from '../components/Cursor';
+import Modal from '../components/Modal';
 
 function Projects() {
   const [filterRepo, setFilterRepo] = useState([]);
+  const [cursorIsActive, setCursorIsActive] = useState(false);
+  const [modalIsActive, setModalIsActive] = useState(false);
 
   useEffect(() => {
     const fetchRepo = async () => {
@@ -47,21 +51,41 @@ function Projects() {
 
     fetchRepo();
   }, []);
+
   return (
     <>
+      <Modal active={modalIsActive}></Modal>
+      <Cursor active={cursorIsActive}></Cursor>
       <section className="flex items-center justify-center bg-zinc-950 font-grotesk px-5">
         <div className="container py-30">
-          <h1 className="text-zinc-200 text-4xl gap-5 font-black flex">
-            <svg className="h-10 w-10">
-              <use href="#icon-github" className="fill-zinc-200"></use>
-            </svg>{' '}
-            My Projects
-          </h1>
+          <div className="flex justify-between">
+            <h1 className="text-zinc-200 text-4xl gap-5 font-black flex">
+              <svg className="h-10 w-10">
+                <use href="#icon-github" className="fill-zinc-200"></use>
+              </svg>{' '}
+              My Projects
+            </h1>
+            <button
+              className="uppercase text-zinc-200 border border-zinc-800 px-5 rounded-full font-jetbrains hover:border-zinc-200 transition-colors"
+              onClick={() => {
+                localStorage.removeItem('repos');
+                setModalIsActive(true);
+              }}
+            >
+              Reload
+            </button>
+          </div>
           <div className="py-10 flex gap-10 w-full  flex-wrap justify-between">
             {filterRepo.map((item) => (
               <div
+                onMouseOver={() => {
+                  setCursorIsActive(true);
+                }}
+                onMouseOut={() => {
+                  setCursorIsActive(false);
+                }}
                 key={item.id}
-                className="text-zinc-500 border border-zinc-800 rounded-2xl w-full md:w-[calc(50%-80px/2)] lg:w-[calc(33%-80px/3)] hover:border-zinc-200/30 transition-all"
+                className="text-zinc-500 border border-zinc-800 rounded-2xl w-full md:w-[calc(50%-80px/2)] lg:w-[calc(33%-80px/3)] hover:border-zinc-200/30 transition-all cursor-none"
               >
                 <div className="bg-zinc-800/50 p-5 rounded-t-2xl">
                   <div>
@@ -114,20 +138,20 @@ function Projects() {
                         <a
                           href={item.homepage}
                           target="_blank"
-                          className="group-hover:text-zinc-200"
+                          className="group-hover:text-zinc-200 cursor-none"
                         >
                           Preview
-                          <span className="absolute left-0 -bottom-1 h-[1px] w-full bg-zinc-200 origin-center scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                          <span className="absolute left-0 -bottom-1 h-[1px] w-full bg-zinc-200 origin-center scale-x-0 transition-transform duration-300 group-hover:scale-x-100 "></span>
                         </a>
                       </li>
-                      <li className="relative group">
+                      <li className="relative group ">
                         <a
                           href={item.html_url}
                           target="_blank"
-                          className="group-hover:text-zinc-200"
+                          className="group-hover:text-zinc-200 cursor-none"
                         >
                           Github page
-                          <span className="absolute left-0 -bottom-1 h-[1px] w-full bg-zinc-200 origin-center scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                          <span className="absolute left-0 -bottom-1 h-[1px] w-full bg-zinc-200 origin-center scale-x-0 transition-transform duration-300 group-hover:scale-x-100 "></span>
                         </a>
                       </li>
                     </ul>
@@ -149,7 +173,7 @@ function Projects() {
                         .filter((topic) => topic !== 'portfolio-showcase')
                         .map((topic) => (
                           <li
-                            className="border border-zinc-800 px-3 rounded-2xl hover:border-zinc-200/80 transition-colors cursor-pointer"
+                            className="border border-zinc-800 px-3 rounded-2xl hover:border-zinc-200/80 transition-colors"
                             key={topic}
                           >
                             {topic}
