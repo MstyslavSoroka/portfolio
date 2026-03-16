@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Cursor from '../components/Cursor';
 import Modal from '../components/Modal';
 import { BarWave } from 'react-cssfx-loading';
+import { GitHubCalendar } from 'react-github-calendar';
 
 function Projects() {
   const [filterRepo, setFilterRepo] = useState([]);
@@ -62,6 +63,19 @@ function Projects() {
       <Cursor active={cursorIsActive}></Cursor>
       <section className="flex items-center justify-center bg-zinc-950 font-grotesk px-5">
         <div className="container py-30">
+          <div className="flex justify-center">
+            <GitHubCalendar
+              username="MstyslavSoroka"
+              responsive
+              showTotalCount={false}
+              showColorLegend={false}
+              showMonthLabels={false}
+              blockSize={12}
+              theme={{
+                dark: ['#18181b', '#3f3f46', '#52525b', '#71717a', '#a1a1aa'],
+              }}
+            />
+          </div>
           <div className=" sm:flex justify-between items-center">
             <h1 className="text-zinc-200 text-4xl gap-5 font-black flex py-5">
               <svg className="h-10 w-10">
