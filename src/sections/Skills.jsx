@@ -1,37 +1,41 @@
-import Header from './Header';
 import {
   SiReact,
-  SiReactHex,
   SiHtml5,
-  SiHtml5Hex,
   SiCss,
-  SiCssHex,
   SiTailwindcss,
-  SiTailwindcssHex,
   SiJavascript,
-  SiJavascriptHex,
   SiGit,
-  SiGitHex,
   SiLinux,
-  SiLinuxHex,
+  SiArchlinux,
+  SiGithub,
+  SiVite,
+  SiPython,
 } from '@icons-pack/react-simple-icons';
 
 function Skills() {
   const skills = [
-    { Icon: SiReact },
-    { Icon: SiHtml5 },
-    { Icon: SiCss },
-    { Icon: SiTailwindcss },
-    { Icon: SiJavascript },
-    { Icon: SiGit },
-    { Icon: SiLinux },
+    SiReact,
+    SiHtml5,
+    SiCss,
+    SiTailwindcss,
+    SiJavascript,
+    SiGit,
+    SiLinux,
+    SiArchlinux,
+    SiGithub,
+    SiVite,
+    SiPython,
   ];
   return (
     <>
-      <section className="bg-zinc-950">
-        {skills.map(({ Icon }, i) => (
-          <Icon key={i} className="fill-zinc-200" />
-        ))}
+      <section className="bg-zinc-950 flex justify-center py-20">
+        <div className="container px-5">
+          <div className="flex gap-5">
+            {skills.map((Icon, i) => (
+              <Icon key={i} className="fill-zinc-200 w-10 h-10" />
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );
