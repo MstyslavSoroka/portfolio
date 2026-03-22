@@ -61,7 +61,7 @@ function Projects() {
     <>
       <Modal active={modalIsActive}></Modal>
       <Cursor active={cursorIsActive}></Cursor>
-      <section className="flex items-center justify-center bg-zinc-950 font-grotesk px-5">
+      <section className="flex items-center justify-center bg-zinc-950 font-grotesk px-5 ">
         <div className="container py-10 sm:py-30">
           <div className="flex justify-center">
             <GitHubCalendar
